@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bachelor Party — Disneyland</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          sky1: '#8FD3EE',
+          sky2: '#6FC0E2',
+          sky3: '#4FA8CF',
+          kraft: { light: '#F7EDD6', DEFAULT: '#F2E4C4', dark: '#EADBB4', deep: '#DFC99C' },
+          ink:   { DEFAULT: '#2B2A28', soft: '#6B6357' },
+          brick: { DEFAULT: '#D93A32', dark: '#A82A24', light: '#E2453C' },
+          marigold: '#EE9A21',
+          sun:      '#F3D14E',
+          leaf:     '#4E9E63',
+          plum:     '#7C5BA6',
+          tape:     '#EBD9A0',
+        },
+        fontFamily: {
+          display: ['"Alfa Slab One"', 'Georgia', 'serif'],
+          type:    ['"Special Elite"', 'Courier', 'monospace'],
+          hand:    ['Caveat', 'cursive'],
+        },
+        keyframes: {
+          settle: {
+            from: { opacity: '0', transform: 'translateY(46px) rotate(1.4deg) scale(.97)' },
+            to:   { opacity: '1', transform: 'translateY(0) rotate(-.55deg) scale(1)' },
+          },
+          sway: {
+            '0%,100%': { transform: 'translateY(0) rotate(-.55deg)' },
+            '50%':     { transform: 'translateY(-9px) rotate(.35deg)' },
+          },
+          drift: { to: { transform: 'translateX(calc(100vw + 340px))' } },
+          rise: {
+            '0%':   { transform: 'translateY(0) rotate(-4deg)' },
+            '50%':  { transform: 'translateY(-60vh) rotate(5deg)' },
+            '100%': { transform: 'translateY(-125vh) rotate(-3deg)' },
+          },
+          bob: {
+            '0%,100%': { transform: 'translateY(0) rotate(-1.5deg)' },
+            '50%':     { transform: 'translateY(-7px) rotate(1.5deg)' },
+          },
+          tapein: { from: { opacity: '0' }, to: { opacity: '.92' } },
+        },
+        animation: {
+          card:   'settle 1.1s cubic-bezier(.16,1,.3,1) both, sway 8s ease-in-out 1.1s infinite',
+          drift:  'drift 78s linear infinite',
+          rise:   'rise 26s linear infinite',
+          bob:    'bob 6s ease-in-out infinite',
+          tapein: 'tapein .5s ease-out both',
+        },
+      },
+    },
+  }
+</script>
+</head>
+
+<body class="font-type text-ink min-h-screen flex items-center justify-center overflow-x-hidden px-5 pt-14 pb-16
+             bg-[linear-gradient(180deg,#8FD3EE_0%,#6FC0E2_45%,#4FA8CF_100%)]">
+
+<!-- ── drifting clouds ─────────────────────────────────────────── -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+  <div class="absolute rounded-full bg-white opacity-70 blur-[.3px] w-[190px] h-[44px] top-[9%] left-[-260px] animate-drift motion-reduce:animate-none
+              before:content-[''] before:absolute before:bg-white before:rounded-full before:w-[56%] before:h-[170%] before:left-[8%] before:bottom-[22%]
+              after:content-[''] after:absolute after:bg-white after:rounded-full after:w-[42%] after:h-[135%] after:right-[10%] after:bottom-[20%]"></div>
+  <div class="absolute rounded-full bg-white opacity-50 w-[120px] h-[30px] top-[26%] left-[-200px] animate-drift [animation-duration:104s] [animation-delay:-30s] motion-reduce:animate-none
+              before:content-[''] before:absolute before:bg-white before:rounded-full before:w-[56%] before:h-[170%] before:left-[8%] before:bottom-[22%]
+              after:content-[''] after:absolute after:bg-white after:rounded-full after:w-[42%] after:h-[135%] after:right-[10%] after:bottom-[20%]"></div>
+  <div class="absolute rounded-full bg-white opacity-50 w-[250px] h-[56px] top-[62%] left-[-320px] animate-drift [animation-duration:92s] [animation-delay:-55s] motion-reduce:animate-none
+              before:content-[''] before:absolute before:bg-white before:rounded-full before:w-[56%] before:h-[170%] before:left-[8%] before:bottom-[22%]
+              after:content-[''] after:absolute after:bg-white after:rounded-full after:w-[42%] after:h-[135%] after:right-[10%] after:bottom-[20%]"></div>
+  <div class="absolute rounded-full bg-white opacity-40 w-[150px] h-[36px] top-[80%] left-[-220px] animate-drift [animation-duration:120s] [animation-delay:-12s] motion-reduce:animate-none
+              before:content-[''] before:absolute before:bg-white before:rounded-full before:w-[56%] before:h-[170%] before:left-[8%] before:bottom-[22%]
+              after:content-[''] after:absolute after:bg-white after:rounded-full after:w-[42%] after:h-[135%] after:right-[10%] after:bottom-[20%]"></div>
+</div>
+
+<!-- ── stray balloons rising ───────────────────────────────────── -->
+<div class="fixed inset-0 z-[1] overflow-hidden pointer-events-none" aria-hidden="true">
+  <svg class="absolute bottom-[-140px] left-[6%] animate-rise [animation-delay:-4s] motion-reduce:hidden" width="34" height="46" viewBox="0 0 34 46">
+    <ellipse cx="17" cy="16" rx="13" ry="15" fill="#D93A32"/><path d="M17 31v14" stroke="#F2E4C4" stroke-width="1.5"/>
+  </svg>
+  <svg class="absolute bottom-[-140px] left-[22%] animate-rise [animation-duration:34s] [animation-delay:-18s] motion-reduce:hidden" width="26" height="38" viewBox="0 0 26 38">
+    <ellipse cx="13" cy="12" rx="10" ry="11.5" fill="#F3D14E"/><path d="M13 24v13" stroke="#F2E4C4" stroke-width="1.4"/>
+  </svg>
+  <svg class="absolute bottom-[-140px] right-[9%] animate-rise [animation-duration:29s] [animation-delay:-11s] motion-reduce:hidden" width="30" height="42" viewBox="0 0 30 42">
+    <ellipse cx="15" cy="14" rx="11.5" ry="13" fill="#4E9E63"/><path d="M15 27v14" stroke="#F2E4C4" stroke-width="1.4"/>
+  </svg>
+  <svg class="absolute bottom-[-140px] right-[26%] animate-rise [animation-duration:40s] [animation-delay:-26s] motion-reduce:hidden" width="22" height="34" viewBox="0 0 22 34">
+    <ellipse cx="11" cy="10" rx="8.5" ry="10" fill="#EE9A21"/><path d="M11 20v13" stroke="#F2E4C4" stroke-width="1.3"/>
+  </svg>
+</div>
+
+<!-- ── the invitation ─────────────────────────────────────────── -->
+<div class="w-full max-w-[640px] relative z-[2]">
+<article class="relative rounded-[3px] px-6 pt-12 sm:px-12 sm:pt-16 origin-top animate-card motion-reduce:animate-none motion-reduce:opacity-100
+                bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,.5),transparent_42%),linear-gradient(160deg,#F7EDD6_0%,#F2E4C4_55%,#EADBB4_100%)]
+                shadow-[0_2px_0_rgba(255,255,255,.6)_inset,0_26px_50px_-18px_rgba(20,50,70,.45),0_60px_90px_-50px_rgba(20,50,70,.6)]">
+
+  <!-- paper grain -->
+  <div class="absolute inset-0 rounded-[3px] pointer-events-none opacity-[.35] mix-blend-multiply
+              bg-[radial-gradient(rgba(120,95,50,.16)_1px,transparent_1px)] bg-[length:4px_4px]" aria-hidden="true"></div>
+
+  <!-- washi tape -->
+  <span class="absolute -top-3.5 -left-3 sm:-left-6 w-[118px] h-8 rotate-[-32deg] opacity-90 shadow-[0_2px_5px_rgba(20,50,70,.22)] animate-tapein [animation-delay:.9s]
+               bg-[repeating-linear-gradient(135deg,#EBD9A0_0_7px,#E0CB8A_7px_14px)]" aria-hidden="true"></span>
+  <span class="absolute -top-3 -right-3 sm:-right-6 w-[118px] h-8 rotate-[31deg] opacity-90 shadow-[0_2px_5px_rgba(20,50,70,.22)] animate-tapein [animation-delay:1.05s]
+               bg-[repeating-linear-gradient(135deg,#EBD9A0_0_7px,#E0CB8A_7px_14px)]" aria-hidden="true"></span>
+
+  <!-- expedition badge -->
+  <div class="absolute -top-6 -right-2 sm:top-auto sm:bottom-24 sm:-right-6 w-[78px] h-[78px] sm:w-24 sm:h-24 rounded-full rotate-[11deg]
+              bg-plum text-kraft grid place-content-center text-center uppercase tracking-[.14em] leading-[1.5] text-[.5rem] sm:text-[.56rem]
+              shadow-[0_6px_14px_rgba(20,50,70,.35),inset_0_0_0_3px_rgba(244,231,198,.55),inset_0_0_0_6px_#7C5BA6]" aria-hidden="true">
+    Expedition
+    <b class="block font-display text-base my-0.5 tracking-[.02em]">No. 01</b>
+  </div>
+
+  <header class="relative text-center">
+    <p class="flex items-center justify-center gap-3 text-[.72rem] uppercase tracking-[.28em] text-ink-soft">
+      <i class="block h-px w-11 bg-ink-soft opacity-40"></i>
+      <span class="whitespace-nowrap">You're on the crew list</span>
+      <i class="block h-px w-11 bg-ink-soft opacity-40"></i>
+    </p>
+
+    <h1 class="font-display uppercase text-brick mt-4 leading-[.92] tracking-[-.01em] text-[clamp(2.5rem,10vw,4.15rem)]
+               [text-shadow:2px_3px_0_#DFC99C,4px_6px_0_rgba(43,42,40,.13)]">
+      <em class="block not-italic text-ink text-[.38em] tracking-[.06em] mb-[.18em] [text-shadow:1px_2px_0_#DFC99C]">A</em>
+      Family Expedition
+    </h1>
+
+    <p class="font-hand text-3xl text-plum mt-3.5 -rotate-1">
+      for our fearless duo,
+      <b class="font-bold border-b-2 border-dotted border-plum pb-0.5">MR. AND MRS. DOAN</b>
+    </p>
+
+    <p class="mt-4 text-[.82rem] tracking-[.06em] leading-[1.7] text-ink-soft">
+      before they set off on their life together.<br>
+      Pack light. Balloons provided.
+    </p>
+  </header>
+
+  <!-- house + balloon bouquet, drawn for this invitation -->
+  <svg class="block mx-auto mt-7 mb-1 w-[72%] max-w-[300px] h-auto" viewBox="0 0 300 200"
+       role="img" aria-label="A little house carried aloft by a bouquet of balloons">
+    <g class="origin-[50%_90%] animate-bob motion-reduce:animate-none">
+      <ellipse cx="150" cy="34" rx="22" ry="26" fill="#D93A32"/>
+      <ellipse cx="112" cy="48" rx="18" ry="21" fill="#EE9A21"/>
+      <ellipse cx="188" cy="46" rx="19" ry="22" fill="#F3D14E"/>
+      <ellipse cx="132" cy="20" rx="15" ry="18" fill="#4E9E63"/>
+      <ellipse cx="172" cy="18" rx="16" ry="19" fill="#7C5BA6"/>
+      <ellipse cx="96"  cy="26" rx="13" ry="15" fill="#6FC0E2"/>
+      <ellipse cx="206" cy="24" rx="14" ry="16" fill="#D93A32" opacity=".85"/>
+      <g stroke="#6B6357" stroke-width="1.2" fill="none" opacity=".7">
+        <path d="M150 60 C150 90 148 100 150 118"/>
+        <path d="M112 69 C120 92 138 102 150 118"/>
+        <path d="M188 68 C180 92 162 102 150 118"/>
+        <path d="M132 38 C136 80 144 100 150 118"/>
+        <path d="M172 37 C168 80 156 100 150 118"/>
+        <path d="M96 41 C112 82 134 104 150 118"/>
+        <path d="M206 40 C190 82 166 104 150 118"/>
+      </g>
+    </g>
+    <g>
+      <path d="M112 138 L150 116 L188 138 Z" fill="#D93A32"/>
+      <rect x="120" y="138" width="60" height="44" fill="#F7EDD6" stroke="#6B6357" stroke-width="1.5"/>
+      <rect x="128" y="148" width="16" height="16" fill="#6FC0E2" stroke="#6B6357" stroke-width="1.5"/>
+      <rect x="156" y="148" width="16" height="16" fill="#6FC0E2" stroke="#6B6357" stroke-width="1.5"/>
+      <rect x="142" y="166" width="16" height="16" fill="#4E9E63" stroke="#6B6357" stroke-width="1.5"/>
+      <path d="M112 138 L150 116 L188 138" fill="none" stroke="#6B6357" stroke-width="1.5" stroke-linejoin="round"/>
+    </g>
+  </svg>
+
+  <hr class="border-0 border-t-2 border-dashed border-ink/30 mt-5 mb-6">
+
+  <dl class="relative grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-y-1 sm:gap-x-6 sm:gap-y-5 sm:items-baseline">
+    <dt class="text-[.7rem] uppercase tracking-[.24em] text-ink-soft whitespace-nowrap sm:pt-1.5">Where</dt>
+    <dd class="font-display leading-tight text-[clamp(1.15rem,4.2vw,1.5rem)] mb-4 sm:mb-0">
+      Disneyland
+      <small class="block font-type font-normal text-[.72rem] tracking-[.1em] text-ink-soft mt-2">Meet at the main gate</small>
+    </dd>
+
+    <dt class="text-[.7rem] uppercase tracking-[.24em] text-ink-soft whitespace-nowrap sm:pt-1.5">When</dt>
+    <dd class="font-display leading-tight text-[clamp(1.15rem,4.2vw,1.5rem)] mb-4 sm:mb-0 text-marigold border-b-[3px] border-dotted border-kraft-deep">
+      October 18th, 2026
+    </dd>
+
+    <dt class="text-[.7rem] uppercase tracking-[.24em] text-ink-soft whitespace-nowrap sm:pt-1.5">Time</dt>
+    <dd class="font-display leading-tight text-[clamp(1.15rem,4.2vw,1.5rem)] text-marigold border-b-[3px] border-dotted border-kraft-deep">
+      10:00 AM
+      <small class="block font-type font-normal text-[.72rem] tracking-[.1em] text-ink-soft mt-2">Wheels up sharp — the line only gets longer</small>
+    </dd>
+  </dl>
+
+  <p class="relative font-hand text-xl text-leaf text-center mt-7 -rotate-[.8deg]">
+    Bring good walking shoes. We are riding everything.
+  </p>
+
+  <!-- perforated tear line -->
+  <div class="relative h-6 mt-8 -mx-6 sm:-mx-12" aria-hidden="true">
+    <div class="absolute top-3 left-6 right-6 border-t-2 border-dashed border-ink/30"></div>
+    <span class="absolute top-0.5 -left-[11px] w-[22px] h-[22px] rounded-full bg-sky3 shadow-[inset_0_2px_4px_rgba(20,50,70,.35)]"></span>
+    <span class="absolute top-0.5 -right-[11px] w-[22px] h-[22px] rounded-full bg-sky3 shadow-[inset_0_2px_4px_rgba(20,50,70,.35)]"></span>
+  </div>
+
+  <!-- tear-off stub -->
+  <div class="relative flex flex-wrap items-center justify-between gap-4 pt-1.5 pb-8">
+    <p class="text-[.74rem] tracking-[.13em] leading-[1.9] text-ink-soft">
+      <strong class="block text-ink uppercase tracking-[.2em] text-[.7rem]">Tear here &amp; reply</strong>
+    </p>
+    <a href="mailto:joseph.deorum@gmail.com?subject=Count%20me%20in"
+       class="inline-block font-display uppercase text-[.95rem] tracking-[.05em] no-underline text-kraft bg-brick px-6 py-3.5 rounded-sm
+              shadow-[0_4px_0_#A82A24] transition-all duration-100
+              hover:bg-brick-light hover:-translate-y-0.5 hover:shadow-[0_6px_0_#A82A24]
+              active:translate-y-[3px] active:shadow-[0_1px_0_#A82A24]
+              focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-[3px] focus-visible:outline-plum">
+      Count me in
+    </a>
+  </div>
+</article>
+
+<p class="text-center mt-6 text-[.66rem] uppercase tracking-[.22em] text-white/85 [text-shadow:0_1px_3px_rgba(20,50,70,.4)]">
+  Adventure starts at the gate
+</p>
+</div>
+
+</body>
+</html>
